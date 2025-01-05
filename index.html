@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartu Identitas Mahasiswa</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #6e85b7, #b8c6db);
+        overflow: hidden; /* Untuk mencegah scrollbar */
+      }
+
+      .snow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1; /* Letakkan salju di belakang kartu */
+      }
+
+      .snow span {
+        position: absolute;
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: white;
+        opacity: 0.8;
+        border-radius: 50%;
+        animation: fall 10s linear infinite;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+
+      .card {
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+        border: 2px solid #000;
+        position: relative;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        z-index: 2; /* Pastikan kartu berada di atas salju */
+      }
+
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+      .logo img {
+        max-width: 80px;
+      }
+      .photo {
+        position: relative;
+        margin-top: 60px;
+        text-align: center;
+      }
+      .photo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .photo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Efek hover */
+      .photo img:hover {
+        transform: scale(1.2); /* Membesar */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar */
+      }
+      .name {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .info-group {
+        margin-top: 20px;
+      }
+      .info-group p {
+        font-size: 16px;
+        margin: 0;
+        padding: 5px 0;
+      }
+      .info-group button {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 5px;
+        background: linear-gradient(135deg, #125fd3, #4c8ddb);
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .info-group button:hover {
+        background: linear-gradient(135deg, #1979d3, #5b9ade);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
+      .text {
+        text-align: center;
+      }
+
+      /* Media Query untuk layar kecil */
+      @media (max-width: 768px) {
+        .info-group button {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="snow">
+      <!-- Banyak salju -->
+      <span style="left: 5%; animation-delay: 0s"></span>
+      <span style="left: 10%; animation-delay: 1s"></span>
+      <span style="left: 15%; animation-delay: 2s"></span>
+      <span style="left: 20%; animation-delay: 3s"></span>
+      <span style="left: 25%; animation-delay: 4s"></span>
+      <span style="left: 30%; animation-delay: 0.5s"></span>
+      <span style="left: 35%; animation-delay: 1.5s"></span>
+      <span style="left: 40%; animation-delay: 2.5s"></span>
+      <span style="left: 45%; animation-delay: 3.5s"></span>
+      <span style="left: 50%; animation-delay: 4.5s"></span>
+      <span style="left: 55%; animation-delay: 0s"></span>
+      <span style="left: 60%; animation-delay: 1s"></span>
+      <span style="left: 65%; animation-delay: 2s"></span>
+      <span style="left: 70%; animation-delay: 3s"></span>
+      <span style="left: 75%; animation-delay: 4s"></span>
+      <span style="left: 80%; animation-delay: 0.5s"></span>
+      <span style="left: 85%; animation-delay: 1.5s"></span>
+      <span style="left: 90%; animation-delay: 2.5s"></span>
+      <span style="left: 95%; animation-delay: 3.5s"></span>
+    </div>
+    <div class="card">
+      <div class="logo">
+        <!-- Ganti URL src dengan path ke logo universitas -->
+        <img src="upb.png" alt="Logo Universitas" />
+      </div>
+      <div class="photo">
+        <img src="pp.png" alt="Foto Profil" />
+      </div>
+      <div class="name">
+        Chaerul Hidayat <br />
+        (312210300)
+      </div>
+
+      <!-- Informasi Nomor HP dan Tombol -->
+      <div class="info-group">
+        <p class="text">0821-1361-4887</p>
+        <button onclick="window.location.href='tel:+6282113614887'">
+          Contact Me
+        </button>
+      </div>
+
+      <!-- Informasi Email dan Tombol -->
+      <div class="info-group">
+        <p class="text">chaerulhidayat70@gmail.com</p>
+        <button
+          onclick="window.location.href='mailto:chaerulhidayat@example.com'"
+        >
+          Send Email
+        </button>
+      </div>
+      <!-- Informasi Alamat dan Tombol -->
+      <div class="info-group">
+        <p class="text">Jl. Setia Budi No. 98, Cikarang</p>
+        <button onclick="window.location.href='https://maps.app.goo.gl/giA2rS4qiXBZAv1s8'">
+          View Location
+        </button>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
